@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ModelBinding.Models.entities;
+using ModelBinding.Models.repositories;
 
 namespace ModelBinding
 {
@@ -23,7 +25,8 @@ namespace ModelBinding
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddSingleton<IRepositories<Employee>, EmployeesRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
