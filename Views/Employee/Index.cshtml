@@ -1,0 +1,40 @@
+﻿@model ModelBinding.Models.entities.Employee
+
+@{
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@Model.Name</title>
+    <style>
+        tr:nth-child(even) {background-color: #f2f2f2;}
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="border-dark">
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Birth Date</td>
+            <td>Position</td>
+            <td>City</td>
+        </tr>
+        <tr>
+            <td>@Model.Id</td>
+            <td>@Model.Name</td>
+            <td>@Model.Dob</td>
+            <td>@Model.Role</td>
+            <td>@Model.Address.City</td>
+        </tr>
+        
+    </table>
+</div>
+</body>
+</html>

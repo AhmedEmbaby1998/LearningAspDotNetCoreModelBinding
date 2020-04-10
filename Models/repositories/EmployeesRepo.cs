@@ -42,7 +42,7 @@ namespace ModelBinding.Models.repositories
             {
                 Id=4,
                 Name = "Anna",
-                Dob = new DateTime(19836,1,20),
+                Dob = new DateTime(1983,1,20),
                 Role = Role.Manager
             }
         };
