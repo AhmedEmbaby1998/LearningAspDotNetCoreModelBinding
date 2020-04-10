@@ -27,10 +27,13 @@ namespace ModelBinding.Controllers
         [HttpPost]
         public ActionResult Create(Employee employee)
         {
-            if (!_repo.Contains(employee.Id)) 
-                _repo[employee.Id] = employee;
-            return RedirectToAction("Index", new {id = employee.Id});
+            if (TryValidateModel(employee))
+            {
+                if (!_repo.Contains(employee.Id))
+                    _repo[employee.Id] = employee; 
+            }
 
+            return View();
         }
     }
 }

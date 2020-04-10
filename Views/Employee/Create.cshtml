@@ -68,53 +68,57 @@
 </head>
 <body>
 <div>
-      <div class="container">
-        <form asp-action="Create" asp-controller="Employee" method="post">
-          <div class="row">
-            <div class="col-25">
-              <label asp-for="Name">Last Name</label>
-            </div>
-            <div class="col-75">
-              <input type="text" id="lname" asp-for="Name" placeholder="Your Name..">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-25">
-              <label asp-for="Dob">Birth Day</label>
-            </div>
-            <div class="col-75">
-              <input type="date" id="lname" asp-for="Dob" placeholder="Your BirthDate..">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-25">
-              <label asp-for="Address.City">City</label>
-            </div>
-            <div class="col-75">
-              <input type="text"  asp-for="Address.City" placeholder="Your City..">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-25">
-              <label asp-for="Id">Position</label>
-            </div>
-            <div class="col-75">
-              <select id="country" asp-for="Role" asp-items="Html.GetEnumSelectList<Role>()"></select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-25">
-              <label asp-for="Id">Id</label>
-            </div>
-            <div class="col-75">
-              <input id="subject" asp-for="Id" style="height:50px"/>
-            </div>
-          </div>
-          <div class="row">
-            <input type="submit" value="Submit">
-          </div>
-        </form>
+  <div class="container">
+    <form asp-action="Create" asp-controller="Employee" method="post">
+      <div class="row">
+        <div class="col-25">
+          <label asp-for="Name">Last Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" asp-for="Name" placeholder="Your Name..">
+        </div>
       </div>
+      <div class="row">
+        <div class="col-25">
+          <label asp-for="Dob">Birth Day</label>
+        </div>
+        <div class="col-75">
+          <input type="date" id="lname" asp-for="Dob" placeholder="Your BirthDate..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label asp-for="Address.City">City</label>
+        </div>
+        <div class="col-75">
+          <input type="text"  asp-for="Address.City" placeholder="Your City..">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label asp-for="Id">Position</label>
+        </div>
+        <div class="col-75">
+          <select id="country" asp-for="Role" asp-items="Html.GetEnumSelectList<Role>()">
+            <option>Choose Position</option>
+          </select>
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label asp-for="Id">Id</label>
+        </div>
+        <div class="col-75">
+          <input id="subject" asp-for="Id" style="height:25px"/>
+        </div>
+      </div>
+      <div class="row">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+  <div asp-validation-summary="All"></div>
 </div>
 </body>
 </html>
